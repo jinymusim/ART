@@ -1,6 +1,6 @@
 # Fine-tuning Multi-modal LLMs with ART: Art-based Reinforcement Training
 
-This code implements ART (Art-based Reinforcement Training), a method for fine-tuning images. The resulting ART images make LLMs both faster and better for several well-established test tasks.
+This code implements and tests ART (Art-based Reinforcement Training), a method for fine-tuning images. The resulting ART images make LLMs both faster and better for several well-established test tasks.
 The work thus establishes a new fundamental approach in the general-purpose AI fine-tuning. 
 
 ## Attribution and citation
