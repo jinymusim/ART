@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reasoning-with-art"
+version = "0.1.0"
+description = "Improving multi-modal model performance with art"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.13"
+authors = [
+    { name = "Michal Chudoba" },
+    { name = "Sergey Alyaev" },
+    { name = "Petra Galuscakova" },
+    { name = "Tomasz Wiktorski" },
+
+]
+dependencies = [
+    "datasets[vision]>=4.8,<4.9",
+    "transformers>=5.8,<5.10",
+    "torch>=2.10,<3",
+    "accelerate>=1.13,<1.14",
+    "peft>=0.19.0,<1",
+    "vllm==0.19.1",
+    "Pillow>=12.2,<13",
+    "mlflow>=3.12,<3.13",
+    "pyyaml>=6.0.3,<7",
+    "nvidia-ml-py>=13.595,<14",
+    "flashinfer-cubin==0.6.6",
+    "flashinfer-jit-cache==0.6.6",
+]
+
+[project.scripts]
+run-experiment = "reasoning_with_art.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0,<10",
+    "ruff>=0.14,<1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/reasoning_with_art"]
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
+
+[[tool.uv.index]]
+name = "vllm-cu129"
+url = "https://wheels.vllm.ai/0.19.1/cu129"
+explicit = true
+
+[[tool.uv.index]]
+name = "flashinfer-cu129"
+url = "https://flashinfer.ai/whl/cu129"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu129" }
+vllm = { index = "vllm-cu129" }
+flashinfer-jit-cache = { index = "flashinfer-cu129" }
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
+[tool.ruff]
+line-length = 180

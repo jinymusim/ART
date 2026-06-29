@@ -1,0 +1,48 @@
+description: "text-only baseline (Qwen3.5-0.8B)"
+mlflow_tracking_uri: "file:./mlruns"
+gpu_ids: [6]
+
+# ── Modality (input augmentation) ──────────────────────────────────────────
+modality:
+  type: "none"
+
+# ── Benchmarks ─────────────────────────────────────────────────────────────
+benchmarks:
+  - "gsm8k"
+  - "svamp"
+
+split: "test"
+num_samples:
+  gsm8k: 2000
+  svamp: 2000
+
+# ── Per-benchmark token/batch overrides ──────────────────────────────────────
+benchmark_settings:
+  gsm8k: {max_new_tokens: 512}
+  svamp: {max_new_tokens: 512}
+
+# ── Models (local, vLLM-backed) ────────────────────────────────────────────
+models:
+  - name: "Qwen/Qwen3.5-0.8B"
+    backend: "local"
+    model_id: "Qwen/Qwen3.5-0.8B"
+    device: "auto"
+
+    batch_size: 100
+    max_model_len: 4096
+    enable_thinking: false
+
+    sampling_params:
+      temperature: 0.0
+      top_p: 1.0
+      top_k: 0
+      min_p: 0.0
+      presence_penalty: 1.0
+      repetition_penalty: 1.0
+
+    vllm_kwargs:
+      max_num_batched_tokens: 65536
+      max_num_seqs: 100
+      gpu_memory_utilization: 0.9
+      enable_prefix_caching: true
+      tensor_parallel_size: 1
