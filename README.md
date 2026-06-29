@@ -15,6 +15,9 @@ The documented open-source code is in preparation.
 
 If you use this software in academic work, please also cite the paper:
 
+M Chudoba, S Alyaev, P Galuscakova, T Wiktorski (2026)
+**Fine-tuning Multi-modal LLMs with ART: Art-based Reinforcement Training**
+[arXiv preprint arXiv:2606.11854](https://arxiv.org/abs/2606.11854)
 
 ```tex
 @misc{chudoba2026finetuningmultimodalllmsart,
