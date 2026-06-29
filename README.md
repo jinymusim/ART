@@ -1,5 +1,20 @@
 # Fine-tuning Multi-modal LLMs with ART: Art-based Reinforcement Training
 
+This code implements ART (Art-based Reinforcement Training), a method for fine-tuning images. The resulting ART images make LLMs both faster and better for several well-established test tasks.
+The work thus establishes a new fundamental approach in the general-purpose AI fine-tuning. 
+
+## Attribution and citation
+
+Redistributions must retain the copyright notice, license text, and disclaimer as required by the BSD 3-Clause License.
+
+### Code citation
+
+The documented open-source code is in preparation. 
+
+### Academic citation
+
+If you use this software in academic work, please also cite the paper:
+
 
 ```tex
 @misc{chudoba2026finetuningmultimodalllmsart,
