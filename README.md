@@ -49,7 +49,7 @@ Redistributions must retain the copyright notice, license text, and disclaimer a
 
 ### Code citation
 
-The documented open-source code is in preparation. 
+The full documented training code is in preparation. 
 
 ### Academic citation
 
